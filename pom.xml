@@ -15,14 +15,21 @@
 
     <properties>
         <junit.version>5.9.1</junit.version>
-        <maven.compiler.version>3.11.0</maven.compiler.version>
+        <maven.jar.plugin.version>3.2.2</maven.jar.plugin.version>
+        <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>3.1.0</maven.surefire.plugin.version>
         <maven.compiler.source.version>1.8</maven.compiler.source.version>
         <maven.compiler.target.version>1.8</maven.compiler.target.version>
-        <maven.jar.plugin.version>3.2.2</maven.jar.plugin.version>
-    </properties>
 
+    </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-params</artifactId>
@@ -37,18 +44,18 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.version}</version>
-                <configuration>
-                    <source>${maven.compiler.source.version}</source>
-                    <target>${maven.compiler.target.version}</target>
-                </configuration>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${maven.jar.plugin.version}</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source.version}</source>
+                    <target>${maven.compiler.target.version}</target>
+                </configuration>
             </plugin>
 
         </plugins>
