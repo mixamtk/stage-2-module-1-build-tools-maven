@@ -11,6 +11,8 @@
     </parent>
 
     <artifactId>demo</artifactId>
+    <groupId>com.epam.demo</groupId>
+
     <dependencies>
 
         <dependency>
@@ -22,8 +24,8 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 </project>
